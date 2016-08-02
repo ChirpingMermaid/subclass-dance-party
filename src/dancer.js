@@ -37,11 +37,11 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function() {
-  //setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
   //'this' is an instance of makeBlinkyDancer
-  setTimeout(function() {
-    this.step(this.timeBetweenSteps);
-  }.bind(this), this.timeBetweenSteps);
+  // setTimeout(function() {
+  //   this.step.bind(this)(this.timeBetweenSteps);
+  // }.bind(this), this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
