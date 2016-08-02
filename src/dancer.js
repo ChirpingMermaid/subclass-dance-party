@@ -1,11 +1,17 @@
 // Creates and returns a new dancer object that can step
-var makeDancer = function(top, left, timeBetweenSteps) {
+var makeDancer = function(top, left, timeBetweenSteps, type) {
   //this = Object.create(makeDancer.prototype);
   //var dancer = {};
 
   // use jQuery to create an HTML <span> tag
   //dancer.$node = $('<span class="dancer"></span>');
-  this.$node = $('<span class="dancer"></span>');
+
+  if (type === 'fish') {
+    this.$node = $('<img src="">');
+  } else {
+    this.$node = $('<span class="dancer"></span>');
+  }
+  
   this.timeBetweenSteps = timeBetweenSteps;
 
   // dancer.step = function() {
@@ -37,11 +43,11 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeDancer.prototype.step = function() {
-  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  //setTimeout(this.step.bind(this), this.timeBetweenSteps);
   //'this' is an instance of makeBlinkyDancer
-  // setTimeout(function() {
-  //   this.step.bind(this)(this.timeBetweenSteps);
-  // }.bind(this), this.timeBetweenSteps);
+  setTimeout(function() {
+    this.step(this.timeBetweenSteps);
+  }.bind(this), this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {

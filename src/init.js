@@ -1,5 +1,9 @@
 $(document).ready(function() {
   window.dancers = [];
+  var backgrounds = ['images/ocean1.jpg', 'images/ocean2.jpg', 'images/ocean3.jpg'];
+  var bkgd = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+  console.log(bkgd);
+  $('body').attr('background', bkgd);
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -25,12 +29,14 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 10000
     );
     $('body').append(dancer.$node);
   });
 
   $('.addFishButton').on('click', function(event) {
+    //var fish = ['destiny.png', 'dory.png', 'hank.png', 'nemo.png'];
+
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
