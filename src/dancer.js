@@ -7,7 +7,7 @@ var makeDancer = function(top, left, timeBetweenSteps, type) {
   //dancer.$node = $('<span class="dancer"></span>');
 
   if (type === 'fish') {
-    this.$node = $('<img src="">');
+    this.$node = $('<img src="" class="fishies">');
   } else {
     this.$node = $('<span class="dancer"></span>');
   }
