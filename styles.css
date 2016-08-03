@@ -13,7 +13,8 @@ body, a:link, a:visited, a:active{
 }
 .title, .addDancerButton, 
 .addFishButton, .lineUp,
-.scatter {
+.scatter, .addCoordFishButton
+ {
   padding:5px 12px;
   float:right;
 }

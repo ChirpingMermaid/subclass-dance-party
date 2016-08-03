@@ -39,9 +39,12 @@ coordinatedFish.prototype.findNeighbors = function(value) {
   this.distance.sort();
   for (var j=0; j < value; j++) {
     for (var k=0; k < this.school.length; k++) {
-      if (this.school[k][0] == this.distance[j]) {
+      /*if (this.school[k][0] == this.distance[j]) {
         fish.setPosition(this.top, this.left);
-      }
+      }*/
+      var xPosition = this.top;
+      var yPosition = this.school[k].left;
+      this.school[k].$node.animate({ top: xPosition, left: yPosition }, 1000);
     }
   }
 };
